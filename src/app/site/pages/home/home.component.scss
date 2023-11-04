@@ -1,4 +1,4 @@
-.home__form {
+.home__container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,61 +27,4 @@
   left: 15px;
   padding: 4px, 16px, 4px, 16px;
   border-radius: 100px;
-}
-
-.home__exchangerate {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header__exchangerate-line {
-  border-bottom: 2px solid var(--color-divider-gray);
-  margin-top: 16px;
-  margin: 16px 0 16px 0;
-}
-
-.home__exchangerate-title {
-  color: var(--color-dark-gray);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 28px;
-  letter-spacing: 0px;
-  text-align: left;
-}
-
-.home__exchangerate-currency {
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 30px;
-  letter-spacing: 0px;
-  text-align: right;
-}
-
-.home__exchangerate-date {
-  color: var(--color-aaa-gray);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: 0px;
-  text-align: left;
-}
-
-.home__exchangerate-rate {
-  background-color: var(--color-primary-light);
-  color: var(--color-primary);
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 40px;
-  letter-spacing: 0px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 0 16px 0;
-  margin: 16px 0 16px 0;
 }

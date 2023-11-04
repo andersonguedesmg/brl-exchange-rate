@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { SiteRoutingModule } from './site-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './pages/home/home.component';
+import { CurrentExchangeRateComponent } from './components/current-exchange-rate/current-exchange-rate.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    CurrentExchangeRateComponent
   ],
   imports: [
     CommonModule,
