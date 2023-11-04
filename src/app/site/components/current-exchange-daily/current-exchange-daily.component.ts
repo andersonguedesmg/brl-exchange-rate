@@ -14,7 +14,9 @@ export class CurrentExchangeDailyComponent implements OnInit {
   constructor(private homeService: HomeService) { }
 
   ngOnInit() {
-    this.getDailyExchangeRate(this.fromSymbol);
+    // this.getDailyExchangeRate(this.fromSymbol);
+    console.log('CHAMAR');
+
   }
 
   getDailyExchangeRate(fromSymbol: string): void {

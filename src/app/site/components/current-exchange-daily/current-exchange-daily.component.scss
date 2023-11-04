@@ -1,0 +1,63 @@
+.dailyexchangerate__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.dailyexchangerate__card {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.dailyexchangerate__card:hover {
+  transform: scale(1.05);
+}
+
+.dailyexchangerate__date {
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.dailyexchangerate__closediff {
+  color: #3F3F3F;
+  font-family: Roboto;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.dailyexchangerate__first,
+.dailyexchangerate__second {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dailyexchangerate__first p,
+.dailyexchangerate__second p {
+  margin-top: 16px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.dailyexchangerate__first span,
+.dailyexchangerate__second span {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}

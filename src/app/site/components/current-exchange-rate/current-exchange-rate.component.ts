@@ -9,6 +9,7 @@ export class CurrentExchangeRateComponent implements OnInit {
   @Input() currentExchangeRate: any;
   loading: boolean = false;
   fromSymbol: string = '';
+  indShowCards: boolean = false;
 
   constructor() { }
 
@@ -16,5 +17,9 @@ export class CurrentExchangeRateComponent implements OnInit {
     console.log('currentExchangeRate', this.currentExchangeRate);
     // this.fromSymbol = this.currentExchangeRate.fromSymbol;
     this.fromSymbol = 'USD';
+  }
+
+  showCards() {
+    this.indShowCards = true;
   }
 }

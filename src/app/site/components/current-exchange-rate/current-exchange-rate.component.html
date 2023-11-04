@@ -30,4 +30,11 @@
   </div>
 </div>
 
-<app-current-exchange-daily [fromSymbol]="fromSymbol"></app-current-exchange-daily>
+<div class="container">
+  <span class="currentexchangerate__show" (click)="showCards()">LAST 30 DAYS</span>
+</div>
+
+<app-current-exchange-daily
+  *ngIf="indShowCards"
+  [fromSymbol]="fromSymbol"
+></app-current-exchange-daily>
