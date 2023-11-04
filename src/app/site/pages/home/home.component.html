@@ -1,23 +1,58 @@
 <app-header></app-header>
 
-<div>
-  <form #form="ngForm" (ngSubmit)="getCurrentExchangeRate(form.value.toSymbol)">
-    <input type="text" id="toSymbol" name="toSymbol" ngModel required />
-
-    <button type="submit" [disabled]="loading">EXCHANGE RESULT</button>
-  </form>
+<div class="container">
+  <div class="home__form">
+    <form
+      #form="ngForm"
+      (ngSubmit)="getCurrentExchangeRate(form.value.toSymbol)"
+    >
+      <input
+        class="home__input"
+        type="text"
+        id="toSymbol"
+        name="toSymbol"
+        ngModel
+        required
+      />
+      <br />
+      <button class="home__button" type="submit" [disabled]="loading">
+        EXCHANGE RESULT
+      </button>
+    </form>
+  </div>
 
   <app-loading-spinner [loading]="loading"></app-loading-spinner>
 
-  <div *ngIf="currentExchangeRate && !loading">
-    <p>Exchange rate now</p>
-    <p>
-      {{ currentExchangeRate.lastUpdatedAt | date : "dd/MM/yyyy '-' HH'h'mm" }}
-    </p>
+  <div class="home__exchangerate">
+    <!-- <div *ngIf="currentExchangeRate && !loading"> -->
+    <div>
+      <div class="header__exchangerate-line"></div>
 
-    <p>R$ {{ currentExchangeRate.exchangeRate }}</p>
-    <p>
-      {{ currentExchangeRate.fromSymbol }}/{{ currentExchangeRate.toSymbol }}
-    </p>
+      <div class="col">
+        <div class="row">
+          <div class="col-10">
+            <span class="home__exchangerate-title">Exchange rate now</span>
+          </div>
+          <div class="col-2">
+            <span class="home__exchangerate-currency">USD/BRL</span>
+            <!-- <span class="home__exchangerate-currency">{{ currentExchangeRate.fromSymbol }}/{{ currentExchangeRate.toSymbol }}</span> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <span class="home__exchangerate-date">04/11/2023 - 11h21</span>
+          <!-- <span class="home__exchangerate-date">{{ currentExchangeRate.lastUpdatedAt | date : "dd/MM/yyyy '-' HH'h'mm" }}</span> -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <span class="home__exchangerate-rate">R$ 5,00</span>
+          <!-- <span class="home__exchangerate-rate">R$ {{ currentExchangeRate.exchangeRate }}</span> -->
+        </div>
+      </div>
+    </div>
   </div>
 </div>
