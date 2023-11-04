@@ -10,6 +10,7 @@ export class CurrentExchangeDailyComponent implements OnInit {
   @Input() fromSymbol: string = '';
   loading: boolean = false;
   currentExchangeRate: any;
+  isCloseDiffPositive: boolean = true;
 
   constructor(private homeService: HomeService) { }
 

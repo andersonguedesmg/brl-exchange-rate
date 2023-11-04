@@ -44,7 +44,6 @@
 
 .dailyexchangerate__first p,
 .dailyexchangerate__second p {
-  margin-top: 16px;
   font-size: 11px;
   font-weight: 500;
   line-height: 14px;
@@ -52,12 +51,33 @@
   text-align: left;
 }
 
-.dailyexchangerate__first span,
-.dailyexchangerate__second span {
-  margin-top: 16px;
+.dailyexchangerate__first p span,
+.dailyexchangerate__second p span {
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
   letter-spacing: 0px;
   text-align: left;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+.dailyexchangerate__closediff-green {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #69C669;
+}
+
+.dailyexchangerate__closediff-red {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #E54E4E;
 }
