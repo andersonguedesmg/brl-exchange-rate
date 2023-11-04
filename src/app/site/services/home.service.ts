@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HomeService {
-  private apiUrl = 'https://api-brl-exchange.actionlabs.com.br/api/1.0/open/currentExchangeRate';
+  private apiUrlCurrent = 'https://api-brl-exchange.actionlabs.com.br/api/1.0/open/currentExchangeRate';
+  private apiUrlDaily = 'https://api-brl-exchange.actionlabs.com.br/api/1.0/open/dailyExchangeRate';
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +17,15 @@ export class HomeService {
       .set('from_symbol', fromSymbol)
       .set('to_symbol', toSymbol);
 
-    return this.http.get(this.apiUrl, { params });
+    return this.http.get(this.apiUrlCurrent, { params });
+  }
+
+  getDailyExchangeRate(apiKey: string, fromSymbol: string, toSymbol: string): Observable<any> {
+    const params = new HttpParams()
+      .set('apiKey', apiKey)
+      .set('from_symbol', fromSymbol)
+      .set('to_symbol', toSymbol);
+
+    return this.http.get(this.apiUrlDaily, { params });
   }
 }

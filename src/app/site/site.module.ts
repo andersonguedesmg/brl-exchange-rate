@@ -7,12 +7,14 @@ import { SiteRoutingModule } from './site-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './pages/home/home.component';
 import { CurrentExchangeRateComponent } from './components/current-exchange-rate/current-exchange-rate.component';
+import { CurrentExchangeDailyComponent } from './components/current-exchange-daily/current-exchange-daily.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    CurrentExchangeRateComponent
+    CurrentExchangeRateComponent,
+    CurrentExchangeDailyComponent
   ],
   imports: [
     CommonModule,

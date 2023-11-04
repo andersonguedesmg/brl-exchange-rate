@@ -6,12 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./current-exchange-rate.component.scss']
 })
 export class CurrentExchangeRateComponent implements OnInit {
+  @Input() currentExchangeRate: any;
   loading: boolean = false;
-  @Input() currentExchangeRate: boolean = false;
+  fromSymbol: string = '';
 
   constructor() { }
 
   ngOnInit() {
     console.log('currentExchangeRate', this.currentExchangeRate);
+    // this.fromSymbol = this.currentExchangeRate.fromSymbol;
+    this.fromSymbol = 'USD';
   }
 }
