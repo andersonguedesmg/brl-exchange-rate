@@ -2,14 +2,18 @@
 
 <div class="home__container">
   <form #form="ngForm" (ngSubmit)="getCurrentExchangeRate(form.value.toSymbol)">
-    <input
-      class="home__input"
-      type="text"
-      id="toSymbol"
-      name="toSymbol"
-      ngModel
-      required
-    />
+    <div class="home__input-container">
+      <input
+        class="home__input"
+        type="text"
+        id="toSymbol"
+        name="toSymbol"
+        placeholder=""
+        ngModel
+        required
+      />
+      <label class="home__label" for="toSymbol">Enter the currency code</label>
+    </div>
     <br />
     <button class="home__button" type="submit" [disabled]="loading">
       EXCHANGE RESULT
