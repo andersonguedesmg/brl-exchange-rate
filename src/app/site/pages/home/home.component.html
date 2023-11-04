@@ -1,3 +1,23 @@
 <app-header></app-header>
 
-<p>home works!</p>
+<div>
+  <form #form="ngForm" (ngSubmit)="getCurrentExchangeRate(form.value.toSymbol)">
+    <input type="text" id="toSymbol" name="toSymbol" ngModel required />
+
+    <button type="submit" [disabled]="loading">EXCHANGE RESULT</button>
+  </form>
+
+  <app-loading-spinner [loading]="loading"></app-loading-spinner>
+
+  <div *ngIf="currentExchangeRate && !loading">
+    <p>Exchange rate now</p>
+    <p>
+      {{ currentExchangeRate.lastUpdatedAt | date : "dd/MM/yyyy '-' HH'h'mm" }}
+    </p>
+
+    <p>R$ {{ currentExchangeRate.exchangeRate }}</p>
+    <p>
+      {{ currentExchangeRate.fromSymbol }}/{{ currentExchangeRate.toSymbol }}
+    </p>
+  </div>
+</div>
