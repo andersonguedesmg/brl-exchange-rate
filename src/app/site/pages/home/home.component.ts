@@ -15,16 +15,20 @@ export class HomeComponent implements OnInit {
   ngOnInit() { }
 
   getCurrentExchangeRate(fromSymbol: string): void {
-    this.loading = true;
-    const apiKey: string = 'RVZG0GHEV2KORLNA';
-    const toSymbol: string = 'BRL';
+    if (!fromSymbol) {
+      alert("Por favor, informe o código da moeda.");
+    } else {
+      this.loading = true;
+      const apiKey: string = 'RVZG0GHEV2KORLNA';
+      const toSymbol: string = 'BRL';
 
-    this.homeService.getCurrentExchangeRate(apiKey, fromSymbol, toSymbol).subscribe(data => {
-      this.currentExchangeRate = data;
-    }, error => {
-      console.error('Erro na API:', error);
-    }).add(() => {
-      this.loading = false;
-    });
+      this.homeService.getCurrentExchangeRate(apiKey, fromSymbol, toSymbol).subscribe(data => {
+        this.currentExchangeRate = data;
+      }, error => {
+        console.error('Erro na API:', error);
+      }).add(() => {
+        this.loading = false;
+      });
+    }
   }
 }
