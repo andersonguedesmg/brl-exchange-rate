@@ -1,3 +1,9 @@
+.spinner__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .loading-spinner {
   border: 8px solid var(--color-gray);
   border-top: 8px solid var(--color-primary);
