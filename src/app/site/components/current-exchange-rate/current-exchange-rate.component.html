@@ -19,8 +19,8 @@
   <span class="currentexchangerate__show" (click)="showCards()">LAST 30 DAYS</span>
 </div>
 
-<app-current-exchange-daily
+<app-daily-exchange-rate
   *ngIf="indShowCards"
   [fromSymbol]="fromSymbol"
   [indShowCards]="indShowCards">
-</app-current-exchange-daily>
+</app-daily-exchange-rate>

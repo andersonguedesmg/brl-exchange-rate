@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { HomeService } from '../../services/home.service';
 
 @Component({
-  selector: 'app-current-exchange-daily',
-  templateUrl: './current-exchange-daily.component.html',
-  styleUrls: ['./current-exchange-daily.component.scss']
+  selector: 'app-daily-exchange-rate',
+  templateUrl: './daily-exchange-rate.component.html',
+  styleUrls: ['./daily-exchange-rate.component.scss']
 })
-export class CurrentExchangeDailyComponent implements OnInit {
+export class DailyExchangeRateComponent implements OnInit {
   @Input() fromSymbol: string = '';
   @Input() indShowCards: boolean = false;
   loading: boolean = false;

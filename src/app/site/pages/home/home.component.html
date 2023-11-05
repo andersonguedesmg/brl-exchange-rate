@@ -24,7 +24,7 @@
 <app-loading-spinner [loading]="loading"></app-loading-spinner>
 
 <app-current-exchange-rate
-  *ngIf="currentExchangeRate && this.currentExchangeRate.success && !loading"
+  *ngIf="currentExchangeRate && !loading"
   [currentExchangeRate]="currentExchangeRate"
 ></app-current-exchange-rate>
 
