@@ -14,9 +14,7 @@ export class CurrentExchangeRateComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('currentExchangeRate', this.currentExchangeRate);
     this.fromSymbol = this.currentExchangeRate.fromSymbol;
-    // this.fromSymbol = 'USD';
   }
 
   showCards() {

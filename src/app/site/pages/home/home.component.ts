@@ -23,11 +23,11 @@ export class HomeComponent implements OnInit {
       const toSymbol: string = 'BRL';
 
       this.homeService.getCurrentExchangeRate(apiKey, fromSymbol, toSymbol).subscribe(data => {
-        // if (data.success) {
+        if (data.success) {
           this.currentExchangeRate = data;
-        // } else {
-        //   alert('Algo deu errado! :-(');
-        // }
+        } else {
+          alert('Algo deu errado! :-(');
+        }
       }, error => {
         console.error('Erro na API:', error);
       }).add(() => {
