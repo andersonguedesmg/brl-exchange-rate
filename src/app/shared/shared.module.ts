@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     NotFoundComponent,
     HeaderComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule
@@ -16,6 +18,7 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
   exports: [
     HeaderComponent,
     LoadingSpinnerComponent,
+    FooterComponent,
   ]
 })
 export class SharedModule { }
