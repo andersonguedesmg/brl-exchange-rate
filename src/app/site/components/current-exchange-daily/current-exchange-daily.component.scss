@@ -64,20 +64,24 @@ p {
   margin-bottom: 0.5rem;
 }
 
-.dailyexchangerate__closediff-green {
+.dailyexchangerate__closediff-green,
+.dailyexchangerate__closediff-red,
+.dailyexchangerate__closediff-zero {
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
   letter-spacing: 0px;
   text-align: left;
-  color: #69C669;
+}
+
+.dailyexchangerate__closediff-green {
+  color: var(--color-green);
 }
 
 .dailyexchangerate__closediff-red {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0px;
-  text-align: left;
-  color: #E54E4E;
+  color: var(--color-red);
+}
+
+.dailyexchangerate__closediff-zero {
+  color: var(--color-black);
 }

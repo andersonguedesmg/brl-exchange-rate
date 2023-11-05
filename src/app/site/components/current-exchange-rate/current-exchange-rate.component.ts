@@ -15,11 +15,11 @@ export class CurrentExchangeRateComponent implements OnInit {
 
   ngOnInit() {
     console.log('currentExchangeRate', this.currentExchangeRate);
-    // this.fromSymbol = this.currentExchangeRate.fromSymbol;
-    this.fromSymbol = 'USD';
+    this.fromSymbol = this.currentExchangeRate.fromSymbol;
+    // this.fromSymbol = 'USD';
   }
 
   showCards() {
-    this.indShowCards = true;
+    this.indShowCards = !this.indShowCards;
   }
 }

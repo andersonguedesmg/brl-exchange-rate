@@ -1,157 +1,38 @@
 <div class="container">
   <div class="dailyexchangerate__container">
-    <div class="dailyexchangerate__card">
-      <span class="dailyexchangerate__date">04/11/2023</span>
+    <div class="dailyexchangerate__card" *ngFor="let item of teste">
+      <span class="dailyexchangerate__date">{{
+        item.date | date : "dd/MM/yyyy"
+      }}</span>
 
       <div class="dailyexchangerate__first">
-        <p>OPEN:<span> R$ 5.666</span></p>
-        <p>HIGH:<span> R$ 5.689</span></p>
+        <p>
+          OPEN:<span> R$ {{ item.open }}</span>
+        </p>
+        <p>
+          HIGH:<span> R$ {{ item.high }}</span>
+        </p>
       </div>
 
       <div class="dailyexchangerate__second">
-        <p>CLOSE:<span> R$ 5.0038</span></p>
-        <p>LOW:<span> R$ 4.936</span></p>
+        <p>
+          CLOSE:<span> R$ {{ item.close }}</span>
+        </p>
+        <p>
+          LOW:<span> R$ {{ item.low }}</span>
+        </p>
       </div>
 
       <span class="dailyexchangerate__closediff"
         >CLOSE DIFF (%):
         <span
           [ngClass]="{
-            'dailyexchangerate__closediff-green': isCloseDiffPositive,
-            'dailyexchangerate__closediff-red': !isCloseDiffPositive
+            'dailyexchangerate__closediff-green': item.direcao === 'positiva',
+            'dailyexchangerate__closediff-red': item.direcao === 'negativa',
+            'dailyexchangerate__closediff-zero': item.direcao === 'igual'
           }"
         >
-          1.15%
-        </span>
-      </span>
-    </div>
-
-    <div class="dailyexchangerate__card">
-      <span class="dailyexchangerate__date">04/11/2023</span>
-
-      <div class="dailyexchangerate__first">
-        <p>OPEN:<span> R$ 5.666</span></p>
-        <p>HIGH:<span> R$ 5.689</span></p>
-      </div>
-
-      <div class="dailyexchangerate__second">
-        <p>CLOSE:<span> R$ 5.0038</span></p>
-        <p>LOW:<span> R$ 4.936</span></p>
-      </div>
-
-      <span class="dailyexchangerate__closediff"
-        >CLOSE DIFF (%):
-        <span
-          [ngClass]="{
-            'dailyexchangerate__closediff-green': isCloseDiffPositive,
-            'dailyexchangerate__closediff-red': !isCloseDiffPositive
-          }"
-        >
-          1.15%
-        </span>
-      </span>
-    </div>
-
-    <div class="dailyexchangerate__card">
-      <span class="dailyexchangerate__date">04/11/2023</span>
-
-      <div class="dailyexchangerate__first">
-        <p>OPEN:<span> R$ 5.666</span></p>
-        <p>HIGH:<span> R$ 5.689</span></p>
-      </div>
-
-      <div class="dailyexchangerate__second">
-        <p>CLOSE:<span> R$ 5.0038</span></p>
-        <p>LOW:<span> R$ 4.936</span></p>
-      </div>
-
-      <span class="dailyexchangerate__closediff"
-        >CLOSE DIFF (%):
-        <span
-          [ngClass]="{
-            'dailyexchangerate__closediff-green': isCloseDiffPositive,
-            'dailyexchangerate__closediff-red': !isCloseDiffPositive
-          }"
-        >
-          1.15%
-        </span>
-      </span>
-    </div>
-
-    <div class="dailyexchangerate__card">
-      <span class="dailyexchangerate__date">04/11/2023</span>
-
-      <div class="dailyexchangerate__first">
-        <p>OPEN:<span> R$ 5.666</span></p>
-        <p>HIGH:<span> R$ 5.689</span></p>
-      </div>
-
-      <div class="dailyexchangerate__second">
-        <p>CLOSE:<span> R$ 5.0038</span></p>
-        <p>LOW:<span> R$ 4.936</span></p>
-      </div>
-
-      <span class="dailyexchangerate__closediff"
-        >CLOSE DIFF (%):
-        <span
-          [ngClass]="{
-            'dailyexchangerate__closediff-green': isCloseDiffPositive,
-            'dailyexchangerate__closediff-red': !isCloseDiffPositive
-          }"
-        >
-          1.15%
-        </span>
-      </span>
-    </div>
-
-    <div class="dailyexchangerate__card">
-      <span class="dailyexchangerate__date">04/11/2023</span>
-
-      <div class="dailyexchangerate__first">
-        <p>OPEN:<span> R$ 5.666</span></p>
-        <p>HIGH:<span> R$ 5.689</span></p>
-      </div>
-
-      <div class="dailyexchangerate__second">
-        <p>CLOSE:<span> R$ 5.0038</span></p>
-        <p>LOW:<span> R$ 4.936</span></p>
-      </div>
-
-      <span class="dailyexchangerate__closediff"
-        >CLOSE DIFF (%):
-        <span
-          [ngClass]="{
-            'dailyexchangerate__closediff-green': isCloseDiffPositive,
-            'dailyexchangerate__closediff-red': !isCloseDiffPositive
-          }"
-        >
-          1.15%
-        </span>
-      </span>
-    </div>
-
-    <div class="dailyexchangerate__card">
-      <span class="dailyexchangerate__date">04/11/2023</span>
-
-      <div class="dailyexchangerate__first">
-        <p>OPEN:<span> R$ 5.666</span></p>
-        <p>HIGH:<span> R$ 5.689</span></p>
-      </div>
-
-      <div class="dailyexchangerate__second">
-        <p>CLOSE:<span> R$ 5.0038</span></p>
-        <p>LOW:<span> R$ 4.936</span></p>
-      </div>
-
-      <span class="dailyexchangerate__closediff"
-        >CLOSE DIFF (%):
-        <span
-          [ngClass]="{
-            'dailyexchangerate__closediff-green': isCloseDiffPositive,
-            'dailyexchangerate__closediff-red': !isCloseDiffPositive
-          }"
-        >
-          1.15%
+          {{ item.closeDiff }}
         </span>
       </span>
     </div>
