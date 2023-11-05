@@ -7,7 +7,7 @@ Webapp para verificar o câmbio do real (BRL) em relação a outras moedas.
 ### Tecnologias
 
 - [Angular](https://angular.io/)
-- [Angular CLI](https://github.com/angular/angular-cli)
+- [Angular CLI - version 16.2.9.](https://github.com/angular/angular-cli)
 - [TypeScript](https://www.typescriptlang.org/)
 
 ### Pré-requisitos
@@ -16,7 +16,7 @@ Antes de começar, é preciso ter instalado em sua máquina as seguintes ferrame
 
 - [Git](https://git-scm.com)
 - [Node.js](https://nodejs.org/en/)
-- [Angular CLI - version 16.2.9.](https://angular.io/cli)
+- [Angular CLI](https://angular.io/cli)
 - [VSCode](https://code.visualstudio.com/)
 
 ### Rodando localmente
