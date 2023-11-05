@@ -1,6 +1,6 @@
 <div class="container">
   <div class="dailyexchangerate__container">
-    <div class="dailyexchangerate__card" *ngFor="let item of teste">
+    <div class="dailyexchangerate__card" *ngFor="let item of lastMonth">
       <span class="dailyexchangerate__date">{{
         item.date | date : "dd/MM/yyyy"
       }}</span>
@@ -27,9 +27,9 @@
         >CLOSE DIFF (%):
         <span
           [ngClass]="{
-            'dailyexchangerate__closediff-green': item.direcao === 'positiva',
-            'dailyexchangerate__closediff-red': item.direcao === 'negativa',
-            'dailyexchangerate__closediff-zero': item.direcao === 'igual'
+            'dailyexchangerate__closediff-green': item.signals === 'positive',
+            'dailyexchangerate__closediff-red': item.signals === 'negative',
+            'dailyexchangerate__closediff-zero': item.signals === 'equal'
           }"
         >
           {{ item.closeDiff }}

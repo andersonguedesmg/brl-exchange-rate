@@ -12,8 +12,7 @@ export class CurrentExchangeDailyComponent implements OnInit {
   loading: boolean = false;
   dailyExchangeRate: any[] = [];
   isCloseDiffPositive: boolean = true;
-
-  teste: any;
+  lastMonth: any;
 
   mocke = {
     "success": true,
@@ -748,19 +747,18 @@ export class CurrentExchangeDailyComponent implements OnInit {
 
     this.homeService.getDailyExchangeRate(apiKey, fromSymbol, toSymbol).subscribe(data => {
       this.dailyExchangeRate = this.mocke.data;
-      // console.log('dailyExchangeRate', this.dailyExchangeRate);
+      // this.dailyExchangeRate = data.data;
 
       for (let i = 1; i < this.dailyExchangeRate.length; i++) {
         const closingCurrent = this.dailyExchangeRate[i].close;
         const closingPrevious = this.dailyExchangeRate[i - 1].close;
-        const diferenca = ((closingCurrent - closingPrevious) / closingPrevious) * 100;
-        this.dailyExchangeRate[i - 1].closeDiff = Number(diferenca.toFixed(4));
-        this.dailyExchangeRate[i - 1].direcao = diferenca > 0 ? 'positiva' : (diferenca < 0 ? 'negativa' : 'igual');
+        const difference = ((closingCurrent - closingPrevious) / closingPrevious) * 100;
+        this.dailyExchangeRate[i - 1].closeDiff = Number(difference.toFixed(4));
+        this.dailyExchangeRate[i - 1].signals = difference > 0 ? 'positive' : (difference < 0 ? 'negative' : 'equal');
       }
 
-
-      this.teste = this.dailyExchangeRate.slice(0, 30);
-      console.log('dailyExchangeRate', this.teste);
+      this.lastMonth = this.dailyExchangeRate.slice(0, 30);
+      // console.log('lastMonth', this.lastMonth);
     }, error => {
       console.error('Erro na API:', error);
     }).add(() => {
